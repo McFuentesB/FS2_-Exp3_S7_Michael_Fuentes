@@ -1,0 +1,125 @@
+/* Estilos generales para el panel de administración */
+
+/* Contenedor principal */
+.dashboard {
+    margin-top: 80px; /* Espacio para la barra de navegación */
+  }
+  
+  /* Tarjetas */
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Estilo para el formulario de agregar y editar habitación */
+  .form-container {
+    margin-top: 80px; /* Asegura que el formulario no se oculte bajo la barra de navegación */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out; /* Animación de deslizamiento */
+  }
+  
+  h3 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Espaciado y estilo para los inputs del formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    height: 40px;
+  }
+  
+  .btn-success, .btn-secondary {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Animación de deslizamiento */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Estilos del encabezado */
+  header {
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  /* Estilos para los botones y grilla de habitaciones */
+  .btn-primary {
+    margin-bottom: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  

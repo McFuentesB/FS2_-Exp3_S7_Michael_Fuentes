@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+/* Paleta de colores */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --card-bg-color: #ffffff;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --btn-primary-hover: #0056b3;
+    --btn-secondary-hover: #5a6268;
+  }
+  
+  /* Tipografía */
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Tarjetas */
+  .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+  }
+  
+  /* Links */
+  .btn-link {
+    color: var(--link-color);
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  
+  .btn-link:hover {
+    color: var(--link-hover-color);
+  }
+  
+  /* Responsividad */
+  .container {
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  

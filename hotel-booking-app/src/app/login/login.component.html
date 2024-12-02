@@ -1,0 +1,44 @@
+<div class="container text-center login">
+  <!-- Encabezado -->
+  <header class="my-5">
+    <h1>Iniciar Sesión</h1>
+    <p class="lead">Accede para gestionar tus reservas</p>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #007bff;">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Reserva Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario de Login -->
+  <div class="form-container mt-5">
+    <form (submit)="onLogin()">
+      <div class="form-group mb-3">
+        <label for="username" class="form-label">Nombre de Usuario</label>
+        <input id="username" type="text" [value]="username" (input)="onInput($event, 'username')" class="form-control" required />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input id="password" type="password" [value]="password" (input)="onInput($event, 'password')" class="form-control" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+    </form>
+
+    <div class="links mt-3">
+      <a href="/recuperar" class="btn btn-link" (click)="recuperar()">¿Olvidaste tu contraseña?</a>
+      <br />
+      <a href="/registro" class="btn btn-link" (click)="registro()">¿No tienes cuenta? Regístrate</a>
+    </div>
+  </div>
+</div>

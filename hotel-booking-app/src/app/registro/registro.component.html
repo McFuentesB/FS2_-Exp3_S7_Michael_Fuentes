@@ -1,0 +1,108 @@
+<div class="container text-center registro mt-5">
+  <!-- Encabezado -->
+  <header class="my-5">
+    <h1>Registro de Usuario</h1>
+    <p class="lead">Crea tu cuenta para empezar a gestionar tus reservas</p>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #007bff;">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Reserva Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario de registro -->
+  <div class="form-container mt-5">
+    <form (submit)="onRegister()">
+      <!-- Nombre de usuario -->
+      <div class="form-group mb-3">
+        <label for="username" class="form-label">Nombre de usuario</label>
+        <input
+          id="username"
+          type="text"
+          [value]="username"
+          (input)="onInput($event, 'username')"
+          class="form-control"
+          placeholder="Escribe tu nombre de usuario"
+          required
+        />
+      </div>
+
+      <!-- Correo electrónico -->
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          [value]="email"
+          (input)="onInput($event, 'email')"
+          class="form-control"
+          placeholder="ejemplo@correo.com"
+          required
+        />
+      </div>
+
+      <!-- Contraseña -->
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          [value]="password"
+          (input)="onInput($event, 'password')"
+          class="form-control"
+          placeholder="Crea tu contraseña"
+          required
+        />
+      </div>
+
+      <!-- Confirmar contraseña -->
+      <div class="form-group mb-3">
+        <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          [value]="confirmPassword"
+          (input)="onInput($event, 'confirmPassword')"
+          class="form-control"
+          placeholder="Repite tu contraseña"
+          required
+        />
+      </div>
+
+      <!-- Fecha de nacimiento -->
+      <div class="form-group mb-3">
+        <label for="birthdate" class="form-label">Fecha de nacimiento</label>
+        <input
+          id="birthdate"
+          type="date"
+          [value]="birthdate"
+          (input)="onInput($event, 'birthdate')"
+          class="form-control"
+          [max]="getMaxDate()"
+          [min]="'1900-01-01'"
+          required
+        />
+      </div>
+
+      <!-- Botones -->
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpiar formulario</button>
+      </div>
+
+      <div class="links mt-3">
+        <a routerLink="/login" class="btn btn-link" (click)="goToLogin()">¿Ya tienes cuenta? Inicia sesión</a>
+      </div>
+    </form>
+  </div>
+</div>
+ 

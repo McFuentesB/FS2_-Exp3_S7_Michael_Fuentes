@@ -1,0 +1,36 @@
+/* Formulario de recuperación */
+.recuperar {
+  margin-top: 50px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.card-body {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 8px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Botones */
+button {
+  border-radius: 8px;
+  padding: 10px 20px;
+}

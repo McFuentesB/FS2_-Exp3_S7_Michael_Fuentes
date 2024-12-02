@@ -1,0 +1,58 @@
+<div class="container text-center home">
+    <!-- Encabezado -->
+    <header class="my-5">
+      <h1>Bienvenido al Sistema de Reservas de Habitaciones</h1>
+      <p class="lead">Encuentra la habitación perfecta para tu próxima estadía</p>
+    </header>
+  
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #007bff;">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">Reserva Hotel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a routerLink="/login" class="btn btn-outline-light mx-2" (click)="login()">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/registro" class="btn btn-warning mx-2" (click)="registro()">Crear Cuenta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button *ngFor="let slide of slides; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === currentSlide" aria-current="i === currentSlide ? 'true' : 'false'" aria-label="'Slide ' + (i + 1)"></button>
+      </div>
+      <div class="carousel-inner">
+        <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === currentSlide">
+          <img [src]="slide.image" [alt]="slide.alt" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ slide.title }}</h5>
+            <p>{{ slide.description }}</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" (click)="prevSlide()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" (click)="nextSlide()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+    <!-- Botones de navegación del carrusel -->
+    <div class="carousel-controls mt-3">
+      <button class="btn btn-outline-light" (click)="prevSlide()">Anterior</button>
+      <button class="btn btn-outline-light" (click)="nextSlide()">Siguiente</button>
+    </div>
+  </div>
+  

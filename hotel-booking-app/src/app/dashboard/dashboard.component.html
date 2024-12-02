@@ -1,0 +1,87 @@
+<div class="container text-center dashboard mt-5">
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #007bff;">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Reserva Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn btn-light mx-1 d-flex align-items-center" (click)="goToReservas()">
+              <i class="bi bi-person-circle me-1"></i>
+              <span class="d-none d-md-inline">Mis Reservas</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light mx-1 d-flex align-items-center" (click)="goToPerfil()">
+              <i class="bi bi-person-circle me-1"></i>
+              <span class="d-none d-md-inline">Mi Perfil</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger mx-1 d-flex align-items-center" (click)="logout()">
+              <i class="bi bi-box-arrow-right me-1"></i>
+              <span class="d-none d-md-inline">Cerrar Sesión</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado -->
+  <header class="my-5">
+    <h1>Panel de Reservas</h1>
+    <p class="lead">Reserva las mejores habitaciones para tu estadía</p>
+  </header>
+
+  <!-- Mensaje de carga -->
+  <div *ngIf="rooms.length === 0 && !errorMessage">
+    <p>Cargando habitaciones...</p>
+  </div>
+
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage">
+    <p class="text-danger">{{ errorMessage }}</p>
+  </div>
+  <ng-template #noRooms>
+    <p>No hay habitaciones disponibles en este momento.</p>
+  </ng-template>
+  
+  <!-- Listado de habitaciones -->
+  <div class="row" *ngIf="rooms.length > 0; else noRooms">
+    <div *ngFor="let room of rooms" class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <img src="{{ room.image }}" class="card-img-top" alt="{{ room.name }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ room.name }}</h5>
+          <p class="card-text">{{ room.description }}</p>
+          <p class="card-text"><strong>Precio:</strong> ${{ room.price }}</p>
+
+          <!-- Selector de fecha de reserva -->
+          <div class="form-group">
+            <label for="date-{{ room.id }}">Selecciona la fecha:</label>
+            <input
+              type="date"
+              id="date-{{ room.id }}"
+              class="form-control mb-3"
+              [min]="minDate"
+              (change)="onDateSelect($event, room)"
+            />
+          </div>
+
+          <button
+            class="btn btn-success btn-block"
+            (click)="makeReservation(room)"
+            [disabled]="!room.selectedDate"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
